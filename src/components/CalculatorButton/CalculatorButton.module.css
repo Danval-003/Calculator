@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+
+.equal,
+.numberButton, 
+.exponentialButton, 
+.operationButton {
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    border: none;
+    display: block;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.expanded{
+    width:100px;
+    grid-column: 1 / span 2;
+    border-radius: 30px;
+}
+
+.equal{
+    background-color: rgb(210, 11, 210);
+    color: white;
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.equal:hover{
+    background-color: rgb(249, 74, 249);
+    color: #000;
+}
+
+.numberButton{
+    background-color: #575757;
+    transition: background-color 0.4s ease-in-out;
+    color: white;
+}
+
+.numberButton:hover{
+    background-color: #7f7f7f;
+}
+
+.exponentialButton{
+    text-align: left;
+    background-color: #bbbbbb;
+    font-weight: bold;
+    font-size: 15px;
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.exponentialButton:hover{
+    background-color: #dedede;
+    color: #000;
+}
+
+.operationButton{
+    background-color: #ffc800;
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.operationButton:hover{
+    background-color: #ffe174;
+    color: #000;
+}
