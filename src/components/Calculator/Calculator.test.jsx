@@ -12,6 +12,7 @@ describe('Calculator', () => {
     const numberButton = screen.getByText('1')
     fireEvent.click(numberButton)
     const textone = screen.queryAllByText('1')[0]
+    expect(textone.tagName.toLowerCase()).toBe('div')
     expect(textone).toBeInTheDocument()
   })
 
@@ -24,6 +25,7 @@ describe('Calculator', () => {
     fireEvent.click(numberButton)
     fireEvent.click(pointButton)
     const textone = screen.queryAllByText('1.1')[0]
+    expect(textone.tagName.toLowerCase()).toBe('div')
     expect(textone).toBeInTheDocument()
   })
 
@@ -37,6 +39,7 @@ describe('Calculator', () => {
       fireEvent.click(numberButton)
     }
     const textone = screen.queryAllByText('1.1111111')[0]
+    expect(textone.tagName.toLowerCase()).toBe('div')
     expect(textone).toBeInTheDocument()
   })
 
@@ -70,6 +73,7 @@ describe('Calculator', () => {
 
     const textone = screen.queryAllByText('1')[0]
     const texttwo = screen.getByText('-2')
+    expect(textone.tagName.toLowerCase()).toBe('div')
     expect(textone).toBeInTheDocument()
     expect(texttwo).toBeInTheDocument()
   })
@@ -111,5 +115,20 @@ describe('Calculator', () => {
     fireEvent.click(screen.getByText('='))
     const textInScreen = screen.getByText('ERROR')
     expect(textInScreen).toBeInTheDocument()
+  })
+  it('displays 2 when you clicker 16%7', () => {
+    render(<Calculator />)
+    const oneButton = screen.getByText('1')
+    const sixButton = screen.getByText('6')
+    const sevenButton = screen.getByText('7')
+    const moduleButton = screen.getByText('%')
+    fireEvent.click(oneButton)
+    fireEvent.click(sixButton)
+    fireEvent.click(moduleButton)
+    fireEvent.click(sevenButton)
+
+    const textInScreen = screen.queryAllByText('2')[0]
+    expect(textInScreen).toBeInTheDocument()
+    expect(textInScreen.tagName.toLowerCase()).toBe('div')
   })
 })
